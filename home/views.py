@@ -28,3 +28,8 @@ def login(request):
         else:
             messages.warning(request, 'invalid credentials')
     return render(request, 'home/home.html', {})
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
