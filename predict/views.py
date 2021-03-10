@@ -20,3 +20,8 @@ def prediction(request):
         Predict.objects.create(user=request.user, glucose=glucose, insulin=insulin, bmi=bmi, age=age,
                                result=classification)
     return render(request, 'predict/predict.html', {'detector': classification})
+
+
+def history(request):
+    h = Predict.objects.filter(user=request.user)
+    return render(request, 'predict/history.html', {'h': h})

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import signup, login, logout
-from predict.views import prediction
+from predict.views import prediction, history
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('signup', signup, name='signup'),
     path('predict', prediction, name='predict'),
     path('logout', logout, name='logout'),
+    path('history', history, name='history'),
 ]
